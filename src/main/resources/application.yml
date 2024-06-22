@@ -1,0 +1,16 @@
+server:
+  port: 8282
+
+spring:
+  application:
+    name: AZURE-DATA-BRICKS
+  profiles:
+    active: dev
+  datasource:
+    url: jdbc:databricks://adb-5188656942443334.14.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=/sql/1.0/warehouses/608d11f9505d1c5e;AuthMech=3;UID=token;PWD=<personal-access-token>
+    driver-class-name: com.databricks.client.jdbc.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.SQLServerDialect
+    hibernate:
+      ddl-auto: none
+    show-sql: true
